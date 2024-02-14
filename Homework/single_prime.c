@@ -1,3 +1,10 @@
+/* Group 1 Member : 
+Chutiya Thanaluck 6513111
+Anapat Kitsommart 6513123
+Purin Pongpanich 6513135
+Mahannop Thabua 6513136
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
