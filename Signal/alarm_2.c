@@ -28,5 +28,5 @@ int main(void) {
     for ( ; ; ) pause();
 
     // ที่ไม่ทำงานถูกต้องแล้วเพราะเราสั่ง Pause ไว้ 
-    // ใช้คำสั่ง kill -(number of process)
+    // ใช้คำสั่ง kill - ( number of process )
 }
