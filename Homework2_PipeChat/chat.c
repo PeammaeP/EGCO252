@@ -85,7 +85,7 @@ int main(int argc , char *argv[]) {
                 break; 
             case 0 : 
                 while(strncmp(rbuf , "end chat" , 8)) {
-
+                    
                 }
                 break; 
             default : 
