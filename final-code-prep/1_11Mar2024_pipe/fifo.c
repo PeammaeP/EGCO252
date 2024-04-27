@@ -9,6 +9,7 @@
 // Use ls -l /tmp to check whether fifo exists
 
 #define FIFO_NAME "/tmp/my_fifo"
+
 int main(int argc, char *argv[]) {
   int res, open_mode = 0;
 
@@ -16,7 +17,9 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "Usage: %s<[O_RDONLY,O_WRONLY, O_RDWR,O_NONBLOCK]>\n",*argv);
     exit(EXIT_FAILURE);
   }
+  
   argv++;
+
   if (*argv) {
     if (strncmp(*argv, "O_RDONLY", 8) == 0)
       open_mode |= O_RDONLY;
@@ -40,11 +43,17 @@ int main(int argc, char *argv[]) {
     }
   }
     printf("Process %d opening FIFO\n", getpid());
+
     res = open(FIFO_NAME, open_mode);
+
     printf("Process %d result %d\n", getpid(), res);
     sleep(5);
+
     if (res != -1) (void) close(res);
+
     printf("Process %d finished\n", getpid());
+
     unlink(FIFO_NAME);
+
     exit(EXIT_SUCCESS);
 }
