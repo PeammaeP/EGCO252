@@ -59,6 +59,7 @@ int main(int argc, char *argv[]) {
 
   // Create a message queue
   msgid = msgget(key, 0666 | IPC_CREAT);
+  
   if (msgid == -1) {
       perror("msgget");
       exit(EXIT_FAILURE);
