@@ -26,7 +26,7 @@ int main(void) {
 
   while (running) {
     printf("Enter data: ");
-    
+
     fgets(buffer, BUFSIZ, stdin);
     a_msg.msg_type = 1;
     strcpy(a_msg.data, buffer);
@@ -36,7 +36,7 @@ int main(void) {
       fprintf(stderr, "msgsnd failed\n");
       //exit(EXIT_FAILURE);
     }
-    if (strncmp(buffer, "end", 3) == 0)
+    if(strncmp(buffer, "end", 3) == 0)
       running = 0;
   }
   exit(EXIT_SUCCESS);
