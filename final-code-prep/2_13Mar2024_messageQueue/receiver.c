@@ -11,15 +11,19 @@ struct a_msg {
   long int msg_type;
   char data[BUFSIZ];
 };
+
 int main(void) {
   int running = 1, msgID;
   struct a_msg a_msg;
   long int rcv_msg_type = 0;
+
   msgID = msgget((key_t)1234, 0666 | IPC_CREAT);
+
   if (msgID == -1) {
     fprintf(stderr, "msgget failed\n");
     exit(EXIT_FAILURE);
   }
+
   while (running) {
     if (msgrcv(msgID, (void *)&a_msg, BUFSIZ, rcv_msg_type, 0) == -1) {
       fprintf(stderr, "msgrcv failed\n");
